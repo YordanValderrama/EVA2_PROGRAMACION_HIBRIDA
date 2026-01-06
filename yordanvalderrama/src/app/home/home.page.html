@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <!-- Mostrar la cita aleatoria -->
+  <app-cita-card
+    *ngIf="citaActual"
+    [frase]="citaActual.frase"
+    [autor]="citaActual.autor"
+    [mostrarEliminar]="permitirBorrar"
+    (eliminar)="citaActual = null">
+  </app-cita-card>
+
+  <!-- Mensaje de fallback -->
+  <p *ngIf="!citaActual">No hay citas disponibles</p>
+
+  <!-- Botón para refrescar -->
+  <ion-button fill="outline" (click)="mostrarCitaAleatoria()">
+    Mostrar otra cita
+  </ion-button>
+
+  <!-- Navegación -->
+  <ion-button fill="outline" color="primary" (click)="irAGestionCitas()">
+    Gestionar citas
+  </ion-button>
+  <ion-button fill="outline" color="secondary" (click)="irAConfiguracion()">
+    Configuración
+  </ion-button>
+</ion-content>

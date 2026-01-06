@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Configuración</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <ion-item>
+    <ion-label>Borrar cita al inicio</ion-label>
+    <ion-toggle [(ngModel)]="borrarCitasInicio"></ion-toggle>
+  </ion-item>
+
+  <!-- Botones centrados -->
+  <div class="botones">
+    <ion-button fill="outline" (click)="guardarConfiguracion()">
+      Guardar
+    </ion-button>
+
+    <ion-button fill="outline" color="secondary" [routerLink]="'/'">
+      Volver al menú
+    </ion-button>
+  </div>
+</ion-content>

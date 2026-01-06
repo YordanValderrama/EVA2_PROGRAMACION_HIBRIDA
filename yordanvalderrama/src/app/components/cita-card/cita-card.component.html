@@ -1,0 +1,11 @@
+<ion-item>
+  <ion-label>
+    <h2>{{ frase }}</h2>
+    <p>{{ autor }}</p>
+  </ion-label>
+
+  <ion-button *ngIf="mostrarEliminar" color="danger" fill="clear" slot="end" (click)="onEliminar()">
+    Eliminar
+  </ion-button>
+</ion-item>
+
